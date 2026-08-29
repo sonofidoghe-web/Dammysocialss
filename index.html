@@ -3,16 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temmysocial Homepage</title>
+    <title>Temmysocial</title>
     <style>
-        /* Optional: If you have a custom font file (.woff2 or .ttf), define it here:
-        @font-face {
-            font-family: 'CustomBrandFont';
-            src: url('your-font-file.woff2') format('woff2');
-        }
-        */
-
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +19,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding-bottom: 90px;
+            padding-bottom: 80px;
         }
 
         .page-wrapper {
@@ -39,7 +31,7 @@
             align-items: center;
         }
 
-        /* Header Styles */
+        /* Header */
         .header {
             width: 100%;
             display: flex;
@@ -53,10 +45,31 @@
             align-items: center;
         }
 
-        .logo-img {
-            height: 42px;
-            width: auto;
-            object-fit: contain;
+        /* Fallback text-based stylized logo matching the Temmysocial branding */
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-style: italic;
+            font-family: 'Georgia', serif;
+            font-size: 26px;
+            color: #386614;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-brand .t-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #386614;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 20px;
+            font-style: normal;
+            margin-right: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
         }
 
         .header-icons {
@@ -81,52 +94,52 @@
         }
 
         .menu-toggle {
-            width: 20px;
-            height: 14px;
+            width: 22px;
+            height: 16px;
             justify-content: space-between;
         }
 
         .menu-toggle .bar {
             width: 100%;
-            height: 2.2px;
+            height: 2.5px;
             background-color: #111111;
             border-radius: 2px;
         }
 
-        /* Hero Section Styles */
+        /* Hero Section */
         .hero-section {
             width: 100%;
-            padding: 10px 22px 24px 22px;
+            padding: 12px 20px 26px 20px;
             text-align: center;
         }
 
         .hero-title {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.12;
             color: #111111;
             margin-bottom: 16px;
-            letter-spacing: -1px;
+            letter-spacing: -0.8px;
+            text-transform: uppercase;
         }
 
-        .hero-title .highlight {
+        .hero-title .highlight-green {
             color: #557c2b;
-            display: inline-block;
         }
 
         .hero-description {
-            font-size: 14.5px;
+            font-size: 15px;
             line-height: 1.45;
             color: #666666;
-            margin-bottom: 22px;
-            padding: 0 2px;
+            margin-bottom: 24px;
+            padding: 0 4px;
         }
 
-        /* Buttons Styles */
+        /* Buttons */
         .hero-buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
         }
 
@@ -135,12 +148,12 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding: 14px 20px;
+            padding: 15px 20px;
             font-size: 13px;
             font-weight: 800;
             border-radius: 8px;
             text-decoration: none;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         .btn-primary {
@@ -150,22 +163,22 @@
 
         .btn-primary .arrow {
             margin-left: 8px;
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1;
         }
 
         .btn-secondary {
             background-color: #ffffff;
             color: #111111;
-            border: 1.5px solid #e0e0e0;
+            border: 1.5px solid #e2e2e2;
         }
 
-        /* Category Banner Section */
+        /* Category Banner */
         .category-banner {
             width: 100%;
             background-color: #557c2b;
             color: #ffffff;
-            padding: 14px 24px;
+            padding: 15px 24px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -178,18 +191,18 @@
         }
 
         .banner-content .star-icon {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             line-height: 1;
         }
 
         .banner-content h2 {
-            font-size: 13.5px;
+            font-size: 14px;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
         }
 
-        /* Statistics Grid Section */
+        /* Statistics Grid */
         .stats-grid {
             width: 100%;
             display: grid;
@@ -198,7 +211,7 @@
         }
 
         .stat-card {
-            padding: 30px 14px;
+            padding: 32px 16px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -212,18 +225,18 @@
         }
 
         .stat-number {
-            font-size: 31px;
+            font-size: 32px;
             font-weight: 900;
             color: #557c2b;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
         }
 
         .stat-label {
-            font-size: 10px;
+            font-size: 10.5px;
             font-weight: 800;
             color: #777777;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             text-transform: uppercase;
         }
     </style>
@@ -231,14 +244,16 @@
 <body>
 
     <div class="page-wrapper">
-        <!-- Header Section -->
+        <!-- Header -->
         <header class="header">
             <div class="logo-container">
-                <img src="logo.png" alt="Logo" class="logo-img">
+                <div class="logo-brand">
+                    <span class="t-icon">T</span>emmy <span style="font-weight: normal; font-size: 22px; margin-left: 2px;">social</span>
+                </div>
             </div>
             <div class="header-icons">
                 <button class="theme-toggle" aria-label="Toggle Theme">
-                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                 </button>
                 <button class="menu-toggle" aria-label="Open Menu">
                     <span class="bar"></span>
@@ -248,15 +263,16 @@
             </div>
         </header>
 
-        <!-- Main Hero Section -->
+        <!-- Hero Section -->
         <main class="hero-section">
             <h1 class="hero-title">
                 PREMIUM<br>
-                <span class="highlight">SOCIAL ASSETS</span><br>
-                DELIVERED FAST
+                <span class="highlight-green">SOCIAL</span> ASSETS<br>
+                DELIVERED<br>
+                FAST
             </h1>
             <p class="hero-description">
-                Buy digital assets, working tools, virtual SMS numbers, and SME boosting services plus all in one platform, paid from your wallet.
+                Buy aged social media accounts, working tools, virtual SMS numbers, and SME boosting services plus all in one platform, paid from your wallet.
             </p>
             <div class="hero-buttons">
                 <a href="#get-started" class="btn btn-primary">
@@ -269,7 +285,7 @@
             </div>
         </main>
 
-        <!-- Subheader / Category Banner -->
+        <!-- Category Banner -->
         <section class="category-banner">
             <div class="banner-content">
                 <span class="star-icon">*</span>
@@ -277,7 +293,7 @@
             </div>
         </section>
 
-        <!-- Statistics Grid Section -->
+        <!-- Statistics Grid -->
         <section class="stats-grid">
             <div class="stat-card">
                 <h3 class="stat-number">10K+</h3>
@@ -298,22 +314,5 @@
         </section>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggleBtn = document.querySelector('.theme-toggle');
-            if (themeToggleBtn) {
-                themeToggleBtn.addEventListener('click', () => {
-                    document.body.classList.toggle('dark-mode');
-                });
-            }
-
-            const menuToggleBtn = document.querySelector('.menu-toggle');
-            if (menuToggleBtn) {
-                menuToggleBtn.addEventListener('click', () => {
-                    console.log('Menu button clicked');
-                });
-            }
-        });
-    </script>
 </body>
 </html>
