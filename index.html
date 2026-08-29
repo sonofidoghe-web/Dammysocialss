@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
@@ -23,19 +23,19 @@
 
         .page-wrapper {
             width: 100%;
-            max-width: 480px;
+            max-width: 440px;
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
         }
 
-        /* Header / Logo Section matching exact spacing */
+        /* Header / Logo Section - Pixel-matched padding and layout */
         .header {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 20px 10px 20px;
+            padding: 16px 20px 4px 20px;
         }
 
         .logo-container {
@@ -44,7 +44,7 @@
         }
 
         .logo-img {
-            height: 44px;
+            height: 40px;
             width: auto;
             object-fit: contain;
         }
@@ -52,7 +52,7 @@
         .header-icons {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
         }
 
         .theme-toggle, .menu-toggle {
@@ -63,62 +63,62 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 4px;
+            padding: 2px;
         }
 
         .theme-toggle {
-            color: #222222;
+            color: #111111;
         }
 
         .menu-toggle {
-            width: 24px;
-            height: 16px;
+            width: 22px;
+            height: 14px;
             justify-content: space-between;
         }
 
         .menu-toggle .bar {
             width: 100%;
-            height: 2.5px;
-            background-color: #222222;
+            height: 2.2px;
+            background-color: #111111;
             border-radius: 2px;
         }
 
-        /* Hero Section matching exact spacing and font sizes */
+        /* Hero Section - Matched font weights, sizing, tracking and exact line-heights */
         .hero-section {
             width: 100%;
-            padding: 24px 20px 32px 20px;
+            padding: 16px 20px 24px 20px;
             text-align: center;
         }
 
         .hero-title {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 900;
-            line-height: 1.08;
+            line-height: 1.05;
             color: #111111;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
+            margin-bottom: 22px;
+            letter-spacing: -1.2px;
             text-transform: uppercase;
         }
 
         .hero-title .highlight-green {
-            color: #557c2b;
+            color: #4f7823;
         }
 
         .hero-description {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.45;
-            color: #666666;
-            margin-bottom: 28px;
-            padding: 0 10px;
+            color: #616161;
+            margin-bottom: 24px;
+            padding: 0 4px;
+            font-weight: 400;
         }
 
-        /* Exact button dimensions matching target image */
+        /* Buttons - Exact matched heights, padding, border radius, and font formatting */
         .hero-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
-            padding: 0 4px;
         }
 
         .btn {
@@ -126,29 +126,29 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding: 16px 20px;
-            font-size: 15px;
+            height: 48px;
+            font-size: 14px;
             font-weight: 800;
             border-radius: 8px;
             text-decoration: none;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
         }
 
         .btn-primary {
-            background-color: #557c2b;
+            background-color: #4f7823;
             color: #ffffff;
         }
 
         .btn-primary .arrow {
-            margin-left: 10px;
-            font-size: 16px;
+            margin-left: 8px;
+            font-size: 15px;
             line-height: 1;
         }
 
         .btn-secondary {
             background-color: #ffffff;
             color: #111111;
-            border: 1px solid #dcdcdc;
+            border: 1.5px solid #e0e0e0;
         }
     </style>
 </head>
@@ -159,11 +159,11 @@
         <header class="header">
             <div class="logo-container">
                 <!-- Replace 'logo.png' with your actual logo file name/path -->
-                <img src="logo.png" alt="Temmysocial Logo" class="logo-img">
+                <img src="logo.png.jpg" alt="Temmysocial Logo" class="logo-img">
             </div>
             <div class="header-icons">
                 <button class="theme-toggle" aria-label="Toggle Theme">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                 </button>
                 <button class="menu-toggle" aria-label="Open Menu">
                     <span class="bar"></span>
