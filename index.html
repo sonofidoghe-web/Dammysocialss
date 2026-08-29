@@ -19,7 +19,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding-bottom: 80px;
+            padding-bottom: 60px;
         }
 
         .page-wrapper {
@@ -31,13 +31,13 @@
             align-items: center;
         }
 
-        /* Header */
+        /* Header / Logo Section */
         .header {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 20px;
+            padding: 12px 18px 8px 18px;
         }
 
         .logo-container {
@@ -45,31 +45,10 @@
             align-items: center;
         }
 
-        /* Fallback text-based stylized logo matching the Temmysocial branding */
-        .logo-brand {
-            display: flex;
-            align-items: center;
-            font-weight: 800;
-            font-style: italic;
-            font-family: 'Georgia', serif;
-            font-size: 26px;
-            color: #386614;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-brand .t-icon {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #386614;
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            font-size: 20px;
-            font-style: normal;
-            margin-right: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        .logo-img {
+            height: 34px;
+            width: auto;
+            object-fit: contain;
         }
 
         .header-icons {
@@ -90,36 +69,36 @@
         }
 
         .theme-toggle {
-            color: #111111;
+            color: #222222;
         }
 
         .menu-toggle {
-            width: 22px;
-            height: 16px;
+            width: 20px;
+            height: 14px;
             justify-content: space-between;
         }
 
         .menu-toggle .bar {
             width: 100%;
-            height: 2.5px;
-            background-color: #111111;
+            height: 2.2px;
+            background-color: #222222;
             border-radius: 2px;
         }
 
         /* Hero Section */
         .hero-section {
             width: 100%;
-            padding: 12px 20px 26px 20px;
+            padding: 8px 18px 22px 18px;
             text-align: center;
         }
 
         .hero-title {
-            font-size: 38px;
+            font-size: 33px;
             font-weight: 900;
             line-height: 1.12;
             color: #111111;
-            margin-bottom: 16px;
-            letter-spacing: -0.8px;
+            margin-bottom: 14px;
+            letter-spacing: -0.6px;
             text-transform: uppercase;
         }
 
@@ -128,18 +107,18 @@
         }
 
         .hero-description {
-            font-size: 15px;
-            line-height: 1.45;
+            font-size: 14.5px;
+            line-height: 1.42;
             color: #666666;
-            margin-bottom: 24px;
-            padding: 0 4px;
+            margin-bottom: 20px;
+            padding: 0 2px;
         }
 
         /* Buttons */
         .hero-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
         }
 
@@ -148,7 +127,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            padding: 15px 20px;
+            padding: 14px 20px;
             font-size: 13px;
             font-weight: 800;
             border-radius: 8px;
@@ -163,7 +142,7 @@
 
         .btn-primary .arrow {
             margin-left: 8px;
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1;
         }
 
@@ -178,7 +157,7 @@
             width: 100%;
             background-color: #557c2b;
             color: #ffffff;
-            padding: 15px 24px;
+            padding: 14px 24px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -211,7 +190,7 @@
         }
 
         .stat-card {
-            padding: 32px 16px;
+            padding: 28px 14px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -225,15 +204,15 @@
         }
 
         .stat-number {
-            font-size: 32px;
+            font-size: 31px;
             font-weight: 900;
             color: #557c2b;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             letter-spacing: -0.5px;
         }
 
         .stat-label {
-            font-size: 10.5px;
+            font-size: 10px;
             font-weight: 800;
             color: #777777;
             letter-spacing: 0.6px;
@@ -247,9 +226,8 @@
         <!-- Header -->
         <header class="header">
             <div class="logo-container">
-                <div class="logo-brand">
-                    <span class="t-icon">T</span>emmy <span style="font-weight: normal; font-size: 22px; margin-left: 2px;">social</span>
-                </div>
+                <!-- Replace 'logo.png' with your actual logo file name/path -->
+                <img src="logo.png" alt="Temmysocial Logo" class="logo-img">
             </div>
             <div class="header-icons">
                 <button class="theme-toggle" aria-label="Toggle Theme">
