@@ -1,1121 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Emmy Social</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
-
-<style>
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    min-height: 100%;
-}
-
-body {
-    background: #ffffff;
-    color: #050505;
-    font-family: "Inter", Arial, sans-serif;
-    overflow-x: hidden;
-}
-
-button,
-a {
-    font-family: inherit;
-}
-
-
-/* =========================================================
-   COLORS
-========================================================= */
-
-:root {
-    --green: #438900;
-    --black: #050505;
-    --gray: #666666;
-    --light-border: #e2e2e2;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.site-header {
-    width: 100%;
-    height: 150px;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-
-    padding: 38px 40px 0;
-
-    background: #ffffff;
-}
-
-/*
-   PUT YOUR OWN LOGO IMAGE HERE.
-
-   Keep the .logo size.
-   Only replace "logo.png" with your actual filename.
-*/
-
-.logo {
-    display: block;
-
-    width: 205px;
-    height: 78px;
-
-    object-fit: contain;
-    object-position: left center;
-}
-
-
-/* Header right side */
-
-.header-right {
-    display: flex;
-    align-items: center;
-
-    gap: 40px;
-
-    padding-top: 28px;
-}
-
-
-/* =========================================================
-   SUN ICON
-========================================================= */
-
-.theme-toggle {
-    width: 34px;
-    height: 34px;
-
-    border: 0;
-    outline: 0;
-
-    background: transparent;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-}
-
-.theme-toggle svg {
-    width: 30px;
-    height: 30px;
-
-    fill: none;
-    stroke: #050505;
-    stroke-width: 1.8;
-
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-
-/* =========================================================
-   MENU
-========================================================= */
-
-.menu-toggle {
-    width: 38px;
-    height: 38px;
-
-    border: 0;
-    outline: 0;
-
-    background: transparent;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    gap: 7px;
-
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    display: block;
-
-    width: 36px;
-    height: 3px;
-
-    background: #050505;
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    width: 100%;
-
-    text-align: center;
-
-    padding: 64px 24px 0;
-}
-
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
-.hero-title {
-    width: 100%;
-    max-width: 730px;
-
-    margin: 0 auto;
-
-    font-size: 76px;
-    line-height: 0.93;
-
-    letter-spacing: -3.8px;
-
-    font-weight: 900;
-
-    text-transform: uppercase;
-}
-
-.hero-title .green {
-    color: var(--green);
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.hero-description {
-    width: 100%;
-    max-width: 690px;
-
-    margin: 62px auto 0;
-
-    color: #666666;
-
-    font-size: 27px;
-    line-height: 1.68;
-
-    font-weight: 400;
-
-    letter-spacing: -0.4px;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.hero-buttons {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 20px;
-
-    margin-top: 59px;
-}
-
-.hero-button {
-    width: 350px;
-    height: 80px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-decoration: none;
-
-    border-radius: 11px;
-
-    font-size: 25px;
-    font-weight: 800;
-
-    letter-spacing: 0;
-}
-
-.get-started {
-    background: var(--green);
-    color: #ffffff;
-
-    border: 0;
-}
-
-.get-started .arrow {
-    margin-left: 20px;
-
-    font-size: 34px;
-    font-weight: 400;
-
-    line-height: 1;
-}
-
-.browse-services {
-    background: #ffffff;
-    color: #050505;
-
-    border: 2px solid #e2e2e2;
-
-    box-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.04);
-}
-
-
-/* =========================================================
-   WHITE SPACE BEFORE TICKER
-========================================================= */
-
-.hero-space {
-    width: 100%;
-    height: 255px;
-}
-
-
-/* =========================================================
-   TICKER
-========================================================= */
-
-.ticker {
-    width: 100%;
-    height: 112px;
-
-    background: var(--green);
-
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-}
-
-.ticker-track {
-    display: flex;
-    align-items: center;
-
-    width: max-content;
-
-    animation: tickerMove 18s linear infinite;
-}
-
-.ticker-item {
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-
-    color: #ffffff;
-
-    font-size: 31px;
-    line-height: 1;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin-right: 72px;
-}
-
-.ticker-star {
-    display: inline-block;
-
-    margin-right: 72px;
-
-    font-size: 39px;
-    font-weight: 400;
-
-    line-height: 1;
-}
-
-@keyframes tickerMove {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-
-/* =========================================================
-   SPACE BETWEEN TICKER AND STATS
-========================================================= */
-
-.stats-space {
-    height: 105px;
-}
-
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats {
-    width: calc(100% - 80px);
-    max-width: 700px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    border-top: 1px solid var(--light-border);
-}
-
-
-/* Individual stat */
-
-.stat {
-    height: 280px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 20px;
-    
-    border-bottom: 1px solid var(--light-border);
-}
-
-.stat:nth-child(odd) {
-    border-right: 1px solid var(--light-border);
-}
-
-
-/* Number */
-
-.stat-number {
-    color: var(--green);
-
-    font-size: 48px;
-    line-height: 1;
-
-    font-weight: 900;
-
-    letter-spacing: -1.5px;
-}
-
-
-/* Label */
-
-.stat-label {
-    margin-top: 23px;
-
-    color: #858585;
-
-    font-size: 22px;
-    line-height: 1.45;
-
-    font-weight: 500;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   TABLET / SMALL DESKTOP
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .site-header {
-        height: 125px;
-
-        padding:
-            31px
-            32px
-            0;
-    }
-
-    .logo {
-        width: 190px;
-        height: 68px;
-    }
-
-    .header-right {
-        gap: 30px;
-        padding-top: 21px;
-    }
-
-    .theme-toggle {
-        width: 30px;
-        height: 30px;
-    }
-
-    .theme-toggle svg {
-        width: 27px;
-        height: 27px;
-    }
-
-    .menu-toggle {
-        width: 34px;
-        height: 34px;
-    }
-
-    .menu-toggle span {
-        width: 33px;
-        height: 3px;
-    }
-
-    .hero {
-        padding-top: 65px;
-    }
-
-    .hero-title {
-        max-width: 670px;
-
-        font-size: 68px;
-
-        letter-spacing: -3.2px;
-    }
-
-    .hero-description {
-        max-width: 650px;
-
-        margin-top: 54px;
-
-        font-size: 24px;
-        line-height: 1.65;
-    }
-
-    .hero-buttons {
-        margin-top: 52px;
-    }
-
-    .hero-button {
-        width: 350px;
-        height: 78px;
-
-        font-size: 24px;
-    }
-
-    .hero-space {
-        height: 235px;
-    }
-
-    .ticker {
-        height: 105px;
-    }
-
-    .ticker-item {
-        font-size: 29px;
-    }
-
-    .stats-space {
-        height: 95px;
-    }
-
-    .stats {
-        width: calc(100% - 64px);
-    }
-
-    .stat {
-        height: 270px;
-    }
-}
-
-
-/* =========================================================
-   PHONE
-========================================================= */
-
-@media (max-width: 480px) {
-
-    .site-header {
-        height: 100px;
-
-        padding:
-            27px
-            24px
-            0;
-    }
-
-    /*
-       Your logo remains an image.
-       Replace only logo.png.
-    */
-
-    .logo {
-        width: 154px;
-        height: 57px;
-    }
-
-    .header-right {
-        gap: 21px;
-
-        padding-top: 13px;
-    }
-
-    .theme-toggle {
-        width: 27px;
-        height: 27px;
-    }
-
-    .theme-toggle svg {
-        width: 25px;
-        height: 25px;
-    }
-
-    .menu-toggle {
-        width: 31px;
-        height: 31px;
-
-        gap: 6px;
-    }
-
-    .menu-toggle span {
-        width: 30px;
-        height: 3px;
-    }
-
-
-    /* =====================
-       HERO
-    ===================== */
-
-    .hero {
-        padding:
-            91px
-            24px
-            0;
-    }
-
-    .hero-title {
-        max-width: 430px;
-
-        font-size: 53px;
-
-        line-height: 0.92;
-
-        letter-spacing: -2.7px;
-    }
-
-
-    /* =====================
-       DESCRIPTION
-    ===================== */
-
-    .hero-description {
-        max-width: 430px;
-
-        margin-top: 67px;
-
-        font-size: 22px;
-
-        line-height: 1.8;
-
-        letter-spacing: -0.35px;
-    }
-
-
-    /* =====================
-       BUTTONS
-    ===================== */
-
-    .hero-buttons {
-        margin-top: 58px;
-
-        gap: 20px;
-    }
-
-    .hero-button {
-        width: calc(100vw - 48px);
-
-        max-width: 350px;
-
-        height: 80px;
-
-        border-radius: 11px;
-
-        font-size: 23px;
-    }
-
-    .get-started .arrow {
-        margin-left: 18px;
-        font-size: 32px;
-    }
-
-
-    /* =====================
-       SPACE
-    ===================== */
-
-    .hero-space {
-        height: 250px;
-    }
-
-
-    /* =====================
-       TICKER
-    ===================== */
-
-    .ticker {
-        height: 112px;
-    }
-
-    .ticker-item {
-        font-size: 29px;
-
-        letter-spacing: 1.5px;
-
-        margin-right: 55px;
-    }
-
-    .ticker-star {
-        margin-right: 55px;
-
-        font-size: 38px;
-    }
-
-
-    /* =====================
-       STATS SPACE
-    ===================== */
-
-    .stats-space {
-        height: 105px;
-    }
-
-
-    /* =====================
-       STATS
-    ===================== */
-
-    .stats {
-        width: calc(100% - 50px);
-
-        max-width: none;
-    }
-
-    .stat {
-        height: 270px;
-
-        padding:
-            20px
-            8px;
-    }
-
-    .stat-number {
-        font-size: 43px;
-
-        letter-spacing: -1.5px;
-    }
-
-    .stat-label {
-        margin-top: 21px;
-
-        font-size: 19px;
-
-        line-height: 1.45;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 360px) {
-
-    .site-header {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .logo {
-        width: 140px;
-    }
-
-    .header-right {
-        gap: 17px;
-    }
-
-    .hero {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .hero-title {
-        font-size: 47px;
-        letter-spacing: -2.3px;
-    }
-
-    .hero-description {
-        font-size: 20px;
-        line-height: 1.75;
-    }
-
-    .hero-button {
-        width: calc(100vw - 36px);
-        font-size: 21px;
-    }
-
-    .hero-space {
-        height: 220px;
-    }
-
-    .stats {
-        width: calc(100% - 36px);
-    }
-
-    .stat {
-        height: 235px;
-    }
-
-    .stat-number {
-        font-size: 37px;
-    }
-
-    .stat-label {
-        font-size: 17px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temmysocial Homepage</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 480px;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Styles */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .theme-toggle, .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+        }
+
+        .theme-toggle {
+            color: #222222;
+        }
+
+        .menu-toggle {
+            width: 22px;
+            height: 16px;
+            justify-content: space-between;
+        }
+
+        .menu-toggle .bar {
+            width: 100%;
+            height: 2.5px;
+            background-color: #222222;
+            border-radius: 2px;
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            width: 100%;
+            padding: 12px 24px 28px 24px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1.12;
+            color: #111111;
+            margin-bottom: 18px;
+            letter-spacing: -0.8px;
+        }
+
+        .hero-title .highlight {
+            color: #557c2b;
+        }
+
+        .hero-description {
+            font-size: 15px;
+            line-height: 1.45;
+            color: #666666;
+            margin-bottom: 24px;
+            padding: 0 4px;
+        }
+
+        /* Buttons Styles */
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 13px;
+            font-weight: 800;
+            border-radius: 8px;
+            text-decoration: none;
+            letter-spacing: 0.8px;
+        }
+
+        .btn-primary {
+            background-color: #557c2b;
+            color: #ffffff;
+        }
+
+        .btn-primary .arrow {
+            margin-left: 8px;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #111111;
+            border: 1.5px solid #e2e2e2;
+        }
+
+        /* Category Banner Section */
+        .category-banner {
+            width: 100%;
+            background-color: #557c2b;
+            color: #ffffff;
+            padding: 15px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .banner-content .star-icon {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .banner-content h2 {
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+        }
+
+        /* Statistics Grid Section */
+        .stats-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid #eaeaea;
+        }
+
+        .stat-card {
+            padding: 32px 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .stat-card:nth-child(odd) {
+            border-right: 1px solid #eaeaea;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 900;
+            color: #557c2b;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .stat-label {
+            font-size: 10.5px;
+            font-weight: 800;
+            color: #777777;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
-
 <body>
 
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="logo.png.jpg" alt="Temmysocial Logo" class="logo-img">
+            </div>
+            <div class="header-icons">
+                <button class="theme-toggle" aria-label="Toggle Theme">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+                <button class="menu-toggle" aria-label="Open Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </header>
 
-<!-- =======================================================
-     HEADER
-======================================================= -->
+        <!-- Main Hero Section -->
+        <main class="hero-section">
+            <h1 class="hero-title">
+                PREMIUM <span class="highlight">SOCIAL ASSETS</span> DELIVERED FAST
+            </h1>
+            <p class="hero-description">
+                Buy digital assets, working tools, virtual SMS numbers, and SME boosting services plus all in one platform, paid from your wallet.
+            </p>
+            <div class="hero-buttons">
+                <a href="#get-started" class="btn btn-primary">
+                    GET STARTED 
+                    <span class="arrow">&rarr;</span>
+                </a>
+                <a href="#browse-services" class="btn btn-secondary">
+                    BROWSE SERVICES
+                </a>
+            </div>
+        </main>
 
-<header class="site-header">
+        <!-- Subheader / Category Banner -->
+        <section class="category-banner">
+            <div class="banner-content">
+                <span class="star-icon">*</span>
+                <h2>INSTAGRAM ACCOUNTS</h2>
+            </div>
+        </section>
 
-    <!--
-        REPLACE logo.png WITH YOUR OWN LOGO FILE.
-
-        Example:
-        <img src="my-logo.png" class="logo" alt="Emmy Social">
-    -->
-
-    <img
-        src="logo.png.jpg"
-        class="logo"
-        alt="Emmy Social"
-    >
-
-
-    <div class="header-right">
-
-        <!-- SUN -->
-        <button
-            class="theme-toggle"
-            aria-label="Toggle theme"
-        >
-            <svg viewBox="0 0 24 24">
-
-                <circle
-                    cx="12"
-                    cy="12"
-                    r="4"
-                ></circle>
-
-                <line
-                    x1="12"
-                    y1="2"
-                    x2="12"
-                    y2="5"
-                ></line>
-
-                <line
-                    x1="12"
-                    y1="19"
-                    x2="12"
-                    y2="22"
-                ></line>
-
-                <line
-                    x1="2"
-                    y1="12"
-                    x2="5"
-                    y2="12"
-                ></line>
-
-                <line
-                    x1="19"
-                    y1="12"
-                    x2="22"
-                    y2="12"
-                ></line>
-
-                <line
-                    x1="4.9"
-                    y1="4.9"
-                    x2="7"
-                    y2="7"
-                ></line>
-
-                <line
-                    x1="17"
-                    y1="17"
-                    x2="19.1"
-                    y2="19.1"
-                ></line>
-
-                <line
-                    x1="17"
-                    y1="7"
-                    x2="19.1"
-                    y2="4.9"
-                ></line>
-
-                <line
-                    x1="4.9"
-                    y1="19.1"
-                    x2="7"
-                    y2="17"
-                ></line>
-
-            </svg>
-        </button>
-
-
-        <!-- HAMBURGER -->
-        <button
-            class="menu-toggle"
-            aria-label="Open menu"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
+        <!-- Statistics Grid Section -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3 class="stat-number">10K+</h3>
+                <p class="stat-label">ACCOUNTS IN STOCK</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="stat-number">200+</h3>
+                <p class="stat-label">COUNTRIES FOR SMS</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="stat-number">&lt; 10s</h3>
+                <p class="stat-label">AVG DELIVERY TIME</p>
+            </div>
+            <div class="stat-card">
+                <h3 class="stat-number">24/7</h3>
+                <p class="stat-label">PLATFORM UPTIME</p>
+            </div>
+        </section>
     </div>
 
-</header>
-
-
-
-<!-- =======================================================
-     HERO
-======================================================= -->
-
-<section class="hero">
-
-    <h1 class="hero-title">
-
-        PREMIUM
-
-        <br>
-
-        <span class="green">SOCIAL</span> ASSETS
-
-        <br>
-
-        DELIVERED
-
-        <br>
-
-        FAST
-
-    </h1>
-
-
-    <p class="hero-description">
-
-        Buy aged social media accounts, working
-        tools, virtual SMS numbers, and SME
-        boosting services plus all in one platform,
-        paid from your wallet.
-
-    </p>
-
-
-    <div class="hero-buttons">
-
-        <a
-            href="#"
-            class="hero-button get-started"
-        >
-            GET STARTED
-
-            <span class="arrow">→</span>
-        </a>
-
-
-        <a
-            href="#"
-            class="hero-button browse-services"
-        >
-            BROWSE SERVICES
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- WHITE SPACE -->
-
-<div class="hero-space"></div>
-
-
-
-<!-- =======================================================
-     GREEN TICKER
-======================================================= -->
-
-<section class="ticker">
-
-    <div class="ticker-track">
-
-        <div class="ticker-item">
-
-            <span class="ticker-star">＊</span>
-
-            INSTAGRAM ACCOUNTS
-
-        </div>
-
-
-        <div class="ticker-item">
-
-            <span class="ticker-star">＊</span>
-
-            INSTAGRAM ACCOUNTS
-
-        </div>
-
-
-        <div class="ticker-item">
-
-            <span class="ticker-star">＊</span>
-
-            INSTAGRAM ACCOUNTS
-
-        </div>
-
-
-        <div class="ticker-item">
-
-            <span class="ticker-star">＊</span>
-
-            INSTAGRAM ACCOUNTS
-
-        </div>
-
-
-        <div class="ticker-item">
-
-            <span class="ticker-star">＊</span>
-
-            INSTAGRAM ACCOUNTS
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- SPACE BETWEEN TICKER + STATS -->
-
-<div class="stats-space"></div>
-
-
-
-<!-- =======================================================
-     STATS
-======================================================= -->
-
-<section class="stats">
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            10K+
-        </div>
-
-        <div class="stat-label">
-            ACCOUNTS IN<br>
-            STOCK
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            200+
-        </div>
-
-        <div class="stat-label">
-            COUNTRIES FOR<br>
-            SMS
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            &lt; 10s
-        </div>
-
-        <div class="stat-label">
-            AVG DELIVERY<br>
-            TIME
-        </div>
-
-    </div>
-
-
-    <div class="stat">
-
-        <div class="stat-number">
-            24/7
-        </div>
-
-        <div class="stat-label">
-            PLATFORM<br>
-            UPTIME
-        </div>
-
-    </div>
-
-
-</section>
-
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.querySelector('.theme-toggle');
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                });
+            }
+
+            const menuToggleBtn = document.querySelector('.menu-toggle');
+            if (menuToggleBtn) {
+                menuToggleBtn.addEventListener('click', () => {
+                    console.log('Menu button clicked');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
