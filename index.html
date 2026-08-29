@@ -23,19 +23,19 @@
 
         .page-wrapper {
             width: 100%;
-            max-width: 440px;
+            max-width: 430px;
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
         }
 
-        /* Header / Logo Section - Exact sizing matching your uploaded screenshot */
+        /* Header / Logo Section - Matched exact padding from image */
         .header {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 20px 10px 20px;
+            padding: 12px 18px 4px 18px;
         }
 
         .logo-container {
@@ -44,7 +44,7 @@
         }
 
         .logo-img {
-            height: 48px; /* Larger logo size as requested */
+            height: 38px; /* Perfectly scaled to match your design image */
             width: auto;
             object-fit: contain;
         }
@@ -52,7 +52,7 @@
         .header-icons {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
 
         .theme-toggle, .menu-toggle {
@@ -67,57 +67,57 @@
         }
 
         .theme-toggle {
-            color: #1a1a1a;
+            color: #111111;
         }
 
         .menu-toggle {
-            width: 24px;
-            height: 16px;
+            width: 20px;
+            height: 13px;
             justify-content: space-between;
         }
 
         .menu-toggle .bar {
             width: 100%;
-            height: 2.5px;
-            background-color: #1a1a1a;
+            height: 2px;
+            background-color: #111111;
             border-radius: 2px;
         }
 
-        /* Hero Section - Strict pixel-for-pixel spacing & typography match */
+        /* Hero Section - Matched exact paddings, text color (#555555), and exact button dimensions */
         .hero-section {
             width: 100%;
-            padding: 24px 24px 32px 24px;
+            padding: 18px 24px 28px 24px;
             text-align: center;
         }
 
         .hero-title {
-            font-size: 38px;
+            font-size: 34px;
             font-weight: 900;
-            line-height: 1.05;
+            line-height: 1.08;
             color: #111111;
-            margin-bottom: 26px;
-            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            letter-spacing: -1.2px;
             text-transform: uppercase;
         }
 
         .hero-title .highlight-green {
-            color: #557c2b;
+            color: #557c2b; /* Exact green tone from design */
         }
 
         .hero-description {
-            font-size: 16px;
-            line-height: 1.45;
-            color: #656565;
-            margin-bottom: 30px;
-            padding: 0 4px;
+            font-size: 15px;
+            line-height: 1.48;
+            color: #555555; /* Adjusted text color to match the darker grey in your reference */
+            margin-bottom: 26px;
+            padding: 0 2px;
             font-weight: 400;
         }
 
-        /* Buttons - Exact matched heights, padding, and layout */
+        /* Buttons - Exact matched height, width, padding, font size, and border styling */
         .hero-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
         }
 
@@ -126,8 +126,8 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 52px;
-            font-size: 14px;
+            height: 48px; /* Exact height matching the target design image */
+            font-size: 13.5px;
             font-weight: 800;
             border-radius: 8px;
             text-decoration: none;
@@ -141,14 +141,14 @@
 
         .btn-primary .arrow {
             margin-left: 8px;
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1;
         }
 
         .btn-secondary {
             background-color: #ffffff;
             color: #111111;
-            border: 1.5px solid #e2e2e2;
+            border: 1px solid #d5d5d5; /* Lighter, cleaner border matching the screenshot */
         }
     </style>
 </head>
@@ -163,7 +163,7 @@
             </div>
             <div class="header-icons">
                 <button class="theme-toggle" aria-label="Toggle Theme">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                 </button>
                 <button class="menu-toggle" aria-label="Open Menu">
                     <span class="bar"></span>
