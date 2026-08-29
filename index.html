@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
@@ -29,13 +29,13 @@
             flex-direction: column;
         }
 
-        /* Header / Logo Section - Pixel-matched padding and layout */
+        /* Header / Logo Section - Exact sizing matching your uploaded screenshot */
         .header {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 20px 4px 20px;
+            padding: 24px 20px 10px 20px;
         }
 
         .logo-container {
@@ -44,7 +44,7 @@
         }
 
         .logo-img {
-            height: 40px;
+            height: 48px; /* Larger logo size as requested */
             width: auto;
             object-fit: contain;
         }
@@ -52,7 +52,7 @@
         .header-icons {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
         }
 
         .theme-toggle, .menu-toggle {
@@ -67,57 +67,57 @@
         }
 
         .theme-toggle {
-            color: #111111;
+            color: #1a1a1a;
         }
 
         .menu-toggle {
-            width: 22px;
-            height: 14px;
+            width: 24px;
+            height: 16px;
             justify-content: space-between;
         }
 
         .menu-toggle .bar {
             width: 100%;
-            height: 2.2px;
-            background-color: #111111;
+            height: 2.5px;
+            background-color: #1a1a1a;
             border-radius: 2px;
         }
 
-        /* Hero Section - Matched font weights, sizing, tracking and exact line-heights */
+        /* Hero Section - Strict pixel-for-pixel spacing & typography match */
         .hero-section {
             width: 100%;
-            padding: 16px 20px 24px 20px;
+            padding: 24px 24px 32px 24px;
             text-align: center;
         }
 
         .hero-title {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 900;
             line-height: 1.05;
             color: #111111;
-            margin-bottom: 22px;
-            letter-spacing: -1.2px;
+            margin-bottom: 26px;
+            letter-spacing: -1.5px;
             text-transform: uppercase;
         }
 
         .hero-title .highlight-green {
-            color: #4f7823;
+            color: #557c2b;
         }
 
         .hero-description {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.45;
-            color: #616161;
-            margin-bottom: 24px;
+            color: #656565;
+            margin-bottom: 30px;
             padding: 0 4px;
             font-weight: 400;
         }
 
-        /* Buttons - Exact matched heights, padding, border radius, and font formatting */
+        /* Buttons - Exact matched heights, padding, and layout */
         .hero-buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
         }
 
@@ -126,29 +126,29 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 48px;
+            height: 52px;
             font-size: 14px;
             font-weight: 800;
             border-radius: 8px;
             text-decoration: none;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.8px;
         }
 
         .btn-primary {
-            background-color: #4f7823;
+            background-color: #557c2b;
             color: #ffffff;
         }
 
         .btn-primary .arrow {
             margin-left: 8px;
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1;
         }
 
         .btn-secondary {
             background-color: #ffffff;
             color: #111111;
-            border: 1.5px solid #e0e0e0;
+            border: 1.5px solid #e2e2e2;
         }
     </style>
 </head>
@@ -163,7 +163,7 @@
             </div>
             <div class="header-icons">
                 <button class="theme-toggle" aria-label="Toggle Theme">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
                 </button>
                 <button class="menu-toggle" aria-label="Open Menu">
                     <span class="bar"></span>
